@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Orion\Facades\Orion;
 
-// User Microservice API Routes
-Route::group(['prefix' => 'users'], function() {
-    Route::apiResource('/', UserController::class);
-});
+// User Microservice API Routes - VRAIE syntaxe Orion
+Orion::resource('users', UserController::class);
 
 // Microservice Health Check
 Route::get('/health', function () {
